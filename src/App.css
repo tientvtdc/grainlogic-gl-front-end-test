@@ -1,0 +1,154 @@
+@import url('https://fonts.cdnfonts.com/css/inter');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  font-family: 'Inter';
+}
+
+.bg-layout-home {
+  background: linear-gradient(120deg, #3245ED, rgba(126, 44, 231, 0.50));
+  background-repeat: no-repeat;
+  @apply h-[100vh] w-[100vw] overflow-x-hidden;
+}
+
+.title-box {
+  @apply text-white mx-4 lg:mx-0
+}
+
+.title-box>p {
+  @apply text-4xl lg:text-5xl font-semibold leading-[4.5rem]
+}
+
+.title-box>h1 {
+  @apply text-6xl lg:text-7xl font-extrabold leading-[4.5rem]
+}
+
+.widgets-box {
+  @apply flex flex-row flex-wrap gap-6 md:gap-6 lg:gap-8 xl:gap-16 gap-y-12 justify-center lg:justify-normal lg:content-start;
+}
+
+.button-group-box {
+  @apply p-4 lg:mx-4 bg-[#3333333e] rounded-3xl w-44 h-44 flex flex-row flex-wrap justify-between content-between cursor-pointer;
+  border-top: 2px solid #FFFFFF30;
+  border-left: 2px solid #FFFFFF30;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 8px 16px 0px rgba(27, 27, 27, 0.16);
+  backdrop-filter: blur(40px);
+}
+
+.button-group-box:hover{
+  @apply scale-105 transition-transform duration-300;
+}
+
+.button-group-box>div {
+  @apply w-16 h-16 rounded-full p-3;
+  background: #8576bc;
+  position: relative;
+}
+
+.button-group-box>div::after {
+  @apply rounded-full;
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background-image: linear-gradient(-145deg, #ffffff95, #ffffff30);
+}
+
+.container-box {
+  @apply w-full flex flex-row flex-wrap justify-between;
+
+}
+
+.button-custom {
+  @apply w-[152px] h-[152px] px-4 relative flex items-center justify-center content-center ;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 8px 16px 0px rgba(27, 27, 27, 0.16);
+  backdrop-filter: blur(40px);
+}
+
+.button-custom::before {
+  @apply absolute inset-0 rounded-full;
+  content: "";
+  position: absolute;
+  background: linear-gradient(305deg, #ffffff00, #ffffff90);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #ffffff80 0);
+}
+
+.button-custom:focus,
+.button-custom:focus-visible {
+  outline: none;
+}
+
+.button-custom:hover {
+  @apply scale-105 transition-transform duration-300;
+
+}
+
+.custom-icon {
+  @apply items-center flex justify-center bg-[#ffffff70] p-5 rounded-full relative;
+  backdrop-filter: blur(40px);
+}
+
+.custom-icon::before {
+  @apply absolute inset-0 rounded-full;
+  content: "";
+  position: absolute;
+  background: linear-gradient(45deg, #ffffff00, #ffffff);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #ffffff80 0);
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(30px);
+  animation: 0.3s ease-in forwards zoomOut;
+}
+.modal.show {
+  animation: 0.3s ease-out forwards zoomIn;
+}
+
+.box-show-content {
+  @apply w-11/12  mx-auto rounded-[40px] md:rounded-[80px] pb-16 mb-12 md:mb-0 md:py-16 md:mt-12  flex flex-wrap flex-row justify-center md:gap-6 ;
+  background: rgba(255, 255, 255, 0.40);
+  box-shadow: 0px 8px 16px 0px rgba(27, 27, 27, 0.16);
+  backdrop-filter: blur(40px);
+}
+
+.box-show-content .button-custom{
+  @apply scale-50 md:scale-100 
+}
+.box-show-content .button-custom:hover{
+  @apply scale-[0.55] md:scale-105 
+}
+.box-show-content span{
+  @apply mt-0 md:mt-8
+}
+
+@media (min-width: 2000px) {
+  .container-box {
+    @apply container mx-auto;
+
+  }
+}
